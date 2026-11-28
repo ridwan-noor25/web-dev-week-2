@@ -1,20 +1,25 @@
 
-/* ===== GOOGLE FONTS ==== */
+/* ===== GOOGLE FONTS ===== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 
-/* ===== COLOR PALETTE ===== */
+/* ===== COLOR THEME ===== */
 
 :root {
     --primary: #174C3C;
     --secondary: #26745C;
+    --accent: #D5A84F;
+
     --background: #F4F7F2;
-    --white: #FFFFFF;
+    --surface: #FFFFFF;
     --light-green: #E8F1EC;
-    --border: #D6E1DA;
+
     --text: #333D38;
     --muted: #718078;
+    --border: #D6E1DA;
+
+    --shadow: 0 4px 12px rgba(23, 76, 60, 0.06);
 }
 
 
@@ -25,254 +30,423 @@
 }
 
 body {
+    margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: var(--background);
-    margin: 0;
-    padding: 30px;
     color: var(--text);
     line-height: 1.6;
 }
 
-
-/* ===== HEADER ===== */
-
-header {
-    text-align: center;
-    background-color: var(--white);
-    color: var(--primary);
-    padding: 30px;
-    margin: 0 auto 25px;
-    max-width: 1100px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(23, 76, 60, 0.06);
+h1, h2, h3, p {
+    margin-top: 0;
 }
-
-header img {
-    width: 60px;
-    height: auto;
-}
-
-header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    color: var(--primary);
-    margin: 10px 0;
-}
-
-header p {
-    color: var(--muted);
-    margin-bottom: 0;
-}
-
-
-/* ===== MAIN CONTENT ===== */
-
-main {
-    max-width: 1100px;
-    margin: auto;
-}
-
-
-/* ====== SECTION CARDS ===== */
-
-section {
-    background-color: var(--white);
-    padding: 25px;
-    margin: 20px 0;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(23, 76, 60, 0.05);
-}
-
-
-/* ===== HEADINGS ===== */
 
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
     color: var(--primary);
 }
 
-h2 {
-    font-size: 22px;
-    margin-top: 0;
-    margin-bottom: 20px;
+
+/* ===== MAIN DASHBOARD GRID ===== */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
 }
 
 
-/* ====== FORM STYLING ===== */
+/* ===== SIDEBAR ===== */
 
-.add-expense-section form {
+.sidebar {
+    background-color: var(--primary);
+    color: var(--surface);
+    padding: 30px 20px;
+
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: space-between;
 }
 
-label {
-    font-weight: 600;
-    color: var(--primary);
-    margin-top: 5px;
+.brand h2 {
+    color: var(--surface);
+    font-size: 25px;
+    margin-bottom: 5px;
 }
 
-.add-expense-section > form > input,
-.add-expense-section > form > select {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid var(--border);
+.brand p {
+    color: #C5D9CE;
+    font-size: 12px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+    flex: 1;
+}
+
+.navigation a {
+    color: #E8F1EC;
+    text-decoration: none;
+    padding: 12px 15px;
     border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    background-color: var(--white);
-    color: var(--text);
+    transition: background-color 0.2s ease;
 }
 
-
-/* ===== INPUT FOCUS EFFECT ====== */
-
-input:focus,
-select:focus {
-    outline: none;
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(38, 116, 92, 0.12);
-}
-
-
-/* ====== BUTTON STYLING ====== */
-
-button {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 13px 20px;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    margin-top: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
+.navigation a:hover,
+.navigation a.active {
     background-color: var(--secondary);
 }
 
+.sidebar-footer {
+    color: #C5D9CE;
+    font-size: 13px;
+    margin-top: 30px;
+}
 
-/* ====== EXPENSE TABLE ====== */
+
+/* ===== MAIN CONTENT ===== */
+
+.main-content {
+    min-width: 0;
+    padding: 30px;
+}
+
+
+/* ===== HEADER FLEXBOX ===== */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    background-color: var(--surface);
+    padding: 22px 25px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.welcome p {
+    color: var(--muted);
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-icon {
+    background-color: var(--light-green);
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.profile h3 {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.profile p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+
+/* ===== SECTION HEADINGS ===== */
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+
+/* ===== SUMMARY CARDS - FLEXBOX ===== */
+
+.summary-section {
+    margin-bottom: 30px;
+}
+
+.summary-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    flex: 1;
+    min-width: 200px;
+    background-color: var(--surface);
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-card h3 {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.summary-card .amount {
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.summary-card span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* ===== CATEGORY CARDS - CSS GRID ===== */
+
+.categories-section {
+    margin-bottom: 30px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    background-color: var(--surface);
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-icon {
+    background-color: var(--light-green);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 23px;
+}
+
+.category-label {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.card-details h3 {
+    font-size: 21px;
+    margin-bottom: 4px;
+}
+
+.card-details p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+
+/* ===== CARD HOVER AND KEYBOARD FOCUS ===== */
+
+.category-card:hover,
+.category-card:focus-visible,
+.summary-card:hover,
+.summary-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(23, 76, 60, 0.12);
+}
+
+.category-card:focus-visible,
+.summary-card:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+
+/* ===== TRANSACTIONS TABLE ===== */
+
+.transactions-section {
+    background-color: var(--surface);
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid var(--border);
+    min-width: 500px;
 }
 
 thead {
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--surface);
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    font-size: 13px;
 }
 
 th {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    text-align: left;
-    padding: 15px;
 }
 
 td {
     border-bottom: 1px solid var(--border);
-    padding: 14px 15px;
-    text-align: left;
-    font-size: 14px;
 }
-
-
-/* ====== ALTERNATING TABLE ROWS ====== */
 
 tbody tr:nth-child(even) {
     background-color: var(--light-green);
 }
-
-tbody tr:nth-child(odd) {
-    background-color: var(--white);
-}
-
-
-/* TABLE HOVER EFFECT */
 
 tbody tr:hover {
     background-color: #D5E8DC;
 }
 
 
-/* DESCENDANT SELECTOR */
-
-.expenses-section td {
-    font-family: 'Inter', sans-serif;
-}
-
-
-/* ====== MULTIMEDIA ====== */
-
-.video-section {
-    text-align: center;
-}
-
-iframe {
-    max-width: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-
-/* ==== INSTRUCTIONS===== */
-
-summary {
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--primary);
-    padding: 10px;
-}
-
-details p {
-    color: var(--muted);
-    padding: 10px;
-}
-
-
-/* ==== FOOTER ==== */
+/* ===== FOOTER ===== */
 
 footer {
-    max-width: 1100px;
-    margin: auto;
     text-align: center;
-    padding: 20px;
+    padding: 25px 10px;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 12px;
 }
 
 
-/* ==== RESPONSIVE DESIGN ==== */
+/* ===== RESPONSIVE DESIGN ===== */
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
 
-    body {
-        padding: 12px;
+    .dashboard {
+        grid-template-columns: 1fr;
     }
 
-    header, section {
-        padding: 18px;
+    .sidebar {
+        padding: 20px;
     }
 
-    header h1 {
-        font-size: 25px;
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
     }
 
-    table {
+    .navigation a {
+        padding: 9px 12px;
         font-size: 12px;
     }
 
-    th, td {
-        padding: 9px 7px;
+    .sidebar-footer {
+        display: none;
     }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .top-header {
+        align-items: flex-start;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== DARK THEME - STRETCH GOAL ===== */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --primary: #A4D5BB;
+        --secondary: #28694F;
+        --accent: #E3BB70;
+
+        --background: #151D19;
+        --surface: #202C25;
+        --light-green: #2B3B32;
+
+        --text: #E8F1EC;
+        --muted: #A6B8AD;
+        --border: #3A4C40;
+
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar {
+        background-color: #101813;
+    }
+
+    .brand h2,
+    .welcome h1,
+    .section-heading h2,
+    .card-details h3,
+    .summary-card .amount {
+        color: var(--primary);
+    }
+
+    .category-card:hover,
+    .summary-card:hover {
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    }
+
 }
