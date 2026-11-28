@@ -1,10 +1,8 @@
 
-# Week 2 Budget Tracker
+# Budget Tracker
 
 ## Project Description
-This is a simple Budget Tracker developed using HTML and CSS.
-It helps users view sample expenses and provides a form for
-entering new expenses.
+This is a simple Budget Tracker developed using HTML and CSS. It helps users view sample expenses and provides a form for entering new expenses.
 
 ## Project Files
 
@@ -17,24 +15,44 @@ Contains the structure of the Budget Tracker, including:
 - Collapsible instructions.
 
 ### 2. style.css
-Controls the appearance of the website, including:
-- Colors and backgrounds.
+Controls the visual appearance of the website, including:
+- Consistent green and cream color palette.
+- Google Fonts typography.
 - Form and button styling.
 - Expense table styling.
-- Hover effects.
+- Hover and focus effects.
 - Advanced CSS selectors.
-- Responsive multimedia styling.
+- Responsive design.
+- CSS Box Model using margin, padding, borders and border-radius.
 
 ## Technologies Used
 - HTML5
 - CSS3
+- Google Fonts (Poppins and Inter)
 
 ## Features
 - Expense table with five sample records.
 - Expense form with five categories.
 - Embedded multimedia content.
 - Collapsible instructions.
-- CSS hover and focus effects.
+- Consistent visual design.
+- Styled form inputs and buttons.
+- Alternating table row colors.
+- Responsive layout.
+
+## Design Identity
+
+The Budget Tracker uses a green and cream color palette to create a clean, modern and professional appearance.
+
+### Color Palette
+- Primary Color: Deep Green (#174C3C)
+- Secondary Color: Green (#26745C)
+- Background: Soft Cream (#F4F7F2)
+- Card Background: White (#FFFFFF)
+
+### Typography
+- Poppins for headings.
+- Inter for body text, labels and form elements.
 
 ## Author
-Budget Tracker - Week 2 Assignment
+Budget Tracker - Week 3 Assignment

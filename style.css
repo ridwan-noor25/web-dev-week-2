@@ -1,122 +1,278 @@
 
-/* General styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
-    padding: 20px;
-    color: #333;
+/* ===== GOOGLE FONTS ==== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* ===== COLOR PALETTE ===== */
+
+:root {
+    --primary: #174C3C;
+    --secondary: #26745C;
+    --background: #F4F7F2;
+    --white: #FFFFFF;
+    --light-green: #E8F1EC;
+    --border: #D6E1DA;
+    --text: #333D38;
+    --muted: #718078;
 }
 
-/* Header */
+
+/* ===== GENERAL STYLING ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    margin: 0;
+    padding: 30px;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+/* ===== HEADER ===== */
+
 header {
     text-align: center;
-    background-color: #174c3c;
-    color: white;
-    padding: 25px;
-    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--primary);
+    padding: 30px;
+    margin: 0 auto 25px;
+    max-width: 1100px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(23, 76, 60, 0.06);
 }
 
-/* Main sections */
+header img {
+    width: 60px;
+    height: auto;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+header p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* ===== MAIN CONTENT ===== */
+
+main {
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* ====== SECTION CARDS ===== */
+
 section {
-    background-color: white;
-    padding: 20px;
+    background-color: var(--white);
+    padding: 25px;
     margin: 20px 0;
-    border-radius: 10px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(23, 76, 60, 0.05);
 }
 
-/* Form styling */
+
+/* ===== HEADINGS ===== */
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* ====== FORM STYLING ===== */
+
 .add-expense-section form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 5px;
 }
 
 .add-expense-section > form > input,
 .add-expense-section > form > select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    background-color: var(--white);
+    color: var(--text);
 }
+
+
+/* ===== INPUT FOCUS EFFECT ====== */
 
 input:focus,
 select:focus {
-    outline: 2px solid #174c3c;
-    border-color: #174c3c;
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(38, 116, 92, 0.12);
 }
 
-/* Button */
+
+/* ====== BUTTON STYLING ====== */
+
 button {
-    background-color: #174c3c;
-    color: white;
-    padding: 12px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 13px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 12px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #26745c;
+    background-color: var(--secondary);
 }
 
-/* Expense table */
+
+/* ====== EXPENSE TABLE ====== */
+
 table {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid var(--border);
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-/* Colored header */
 thead {
-    background-color: #174c3c;
-    color: white;
+    background-color: var(--primary);
+    color: var(--white);
 }
 
-/* Alternating rows */
-tr:nth-child(even) {
-    background-color: #eaf2ef;
+th {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px;
 }
 
-/* Table hover */
-tbody tr:hover {
-    background-color: #cce5dc;
-}
-
-/* Descendant selector */
-.expenses-section td {
+td {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 15px;
+    text-align: left;
     font-size: 14px;
 }
 
-/* Negation pseudo-class */
-input:not([type="date"]) {
-    background-color: #fafafa;
+
+/* ====== ALTERNATING TABLE ROWS ====== */
+
+tbody tr:nth-child(even) {
+    background-color: var(--light-green);
 }
 
-/* Multimedia */
+tbody tr:nth-child(odd) {
+    background-color: var(--white);
+}
+
+
+/* TABLE HOVER EFFECT */
+
+tbody tr:hover {
+    background-color: #D5E8DC;
+}
+
+
+/* DESCENDANT SELECTOR */
+
+.expenses-section td {
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* ====== MULTIMEDIA ====== */
+
 .video-section {
     text-align: center;
 }
 
 iframe {
     max-width: 100%;
-    border-radius: 8px;
+    border: none;
+    border-radius: 10px;
 }
 
-/* Instructions */
+
+/* ==== INSTRUCTIONS===== */
+
 summary {
     cursor: pointer;
-    font-weight: bold;
-    color: #174c3c;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--primary);
+    padding: 10px;
 }
 
-/* Footer */
+details p {
+    color: var(--muted);
+    padding: 10px;
+}
+
+
+/* ==== FOOTER ==== */
+
 footer {
+    max-width: 1100px;
+    margin: auto;
     text-align: center;
-    padding: 15px;
-    color: #666;
+    padding: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* ==== RESPONSIVE DESIGN ==== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    header, section {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 9px 7px;
+    }
 }
